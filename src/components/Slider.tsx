@@ -12,7 +12,7 @@ export default function Slider() {
             <br /> Every Book Lover Must
             <br /> Visit!
           </h1>
-          <p className="mb-8">Discover the world's most beautiful and inspiring libraries.</p>
+          <p className="mb-8">Discover the worlds most beautiful and inspiring libraries.</p>
           <Link href="/about" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             Read More
           </Link>
