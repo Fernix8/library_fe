@@ -118,7 +118,7 @@ const Books = () => {
                 />
                 <h3 className="text-xl font-semibold text-orange-400">📖Tên sách: {book.title}</h3>
                 <p className="text-gray-700">📚 Mã sách: {book.bookCode}</p>
-                <p className="text-gray-700">✍ Author: {book.author}</p>
+                <p className="text-gray-700">✍ Tác giả: {book.author}</p>
                 {book.publisher && <p className="text-gray-500 text-sm">🏢 Nhà xuất bản: {book.publisher}</p>}
                 {book.publishedYear && <p className="text-gray-500 text-sm">📅 Năm xuất bản: {book.publishedYear}</p>}
 
