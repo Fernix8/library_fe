@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Slider() {
   return (
-    <section className="relative h-screen">
+    <section className="relative h-[50vh] py-28">
       <Image src="/images/banner.jpg" alt="Library Banner" layout="fill" objectFit="cover" />
       <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
         <div className="text-center text-white">

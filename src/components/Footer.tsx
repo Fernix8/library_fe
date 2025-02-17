@@ -9,7 +9,7 @@ export default function Footer() {
           <div>
             <h3 className="text-2xl font-bold mb-4">THƯ VIỆN</h3>
             <p className="text-gray-400">TRƯỜNG THPT PHAN CHÂU TRINH</p>
-            <p className="text-gray-400 mt-2">Cung cấp sách, tài liệu học tập và nghiên cứu cho học sinh, sinh viên.</p>
+            <p className="text-gray-400 mt-2">Cung cấp sách, tài liệu học tập và nghiên cứu cho học sinh, giáo viên.</p>
           </div>
 
           {/* Các liên kết */}
@@ -38,7 +38,7 @@ export default function Footer() {
           <div>
             <h3 className="text-2xl font-bold mb-4">Liên Hệ</h3>
             <p className="text-gray-400">Email: <Link href="mailto:thuvien@gmail.com"><span className="text-blue-400">thuvienpct2021@gmail.com</span></Link></p>
-            <p className="text-gray-400 mt-2">Điện thoại: <span className="text-blue-400">0511. 3810381 - 3818579</span></p>
+            <p className="text-gray-400 mt-2">Điện thoại: <span className="text-blue-400">0236. 3810381 - 3818579</span></p>
           </div>
 
           {/* Mạng xã hội */}

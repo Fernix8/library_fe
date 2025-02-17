@@ -15,23 +15,22 @@ export default function Contact() {
                     {/* Visit Us Card */}
                     <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
                         <h3 className="text-xl font-semibold text-gray-800 mb-3">Địa Chỉ</h3>
-                        <p className="text-gray-600">123 Đường Thư Viện</p>
+                        <p className="text-gray-600">154 Lê Lợi,</p>
                         <p className="text-gray-600">TP. Đà Nẵng, Việt Nam</p>
                     </div>
 
                     {/* Opening Hours Card */}
                     <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
                         <h3 className="text-xl font-semibold text-gray-800 mb-3">Giờ Mở Cửa</h3>
-                        <p className="text-gray-600">Thứ Hai - Thứ Sáu:</p>
-                        <p className="text-gray-600 mb-2">9:00 AM - 8:00 PM</p>
-                        <p className="text-gray-600">Thứ Bảy - Chủ Nhật:</p>
-                        <p className="text-gray-600">10:00 AM - 6:00 PM</p>
+                        <p className="text-gray-600 mb-4">Thứ Hai - Thứ Bảy:</p>
+                        <p className="text-gray-600 mb-2">Buổi sáng: 7h30-11h00</p>
+                        <p className="text-gray-600">Buổi chiều: 13h30-16h30</p>
                     </div>
 
                     {/* Contact Info Card */}
                     <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
                         <h3 className="text-xl font-semibold text-gray-800 mb-3">Thông Tin Liên Hệ</h3>
-                        <p className="text-gray-600">Điện thoại: (0511) 3810381 - 3818579</p>
+                        <p className="text-gray-600">Điện thoại: (0236) 3810381 - 3818579</p>
                         <p className="text-gray-600">Email: <Link href="mailto:thuvienpct2021@gmail.com"><span className="text-blue-400">thuvienpct2021@gmail.com</span></Link></p>
                     </div>
                 </div>
