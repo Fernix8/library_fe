@@ -51,24 +51,27 @@ export const borrowBookRequest = async (borrowData: {
   bookId: string;
   bookTitle: string;
   borrowDate: string;
+  email: string;
+  phone?: string;
+  note?: string;
 }) => {
   try {
-      const response = await fetch(`${API_URL}/borrow_books/request`, {
-          method: "POST",
-          headers: {
-              "Content-Type": "application/json",
-          },
-          body: JSON.stringify(borrowData),
-      });
+    const response = await fetch(`${API_URL}/borrow_books/request`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(borrowData),
+    });
 
-      if (!response.ok) {
-          throw new Error("Failed to borrow the book");
-      }
+    if (!response.ok) {
+      throw new Error("Failed to borrow the book");
+    }
 
-      return await response.json();
+    return await response.json();
   } catch (error) {
-      console.error("Error submitting borrow request:", error);
-      return null;
+    console.error("Error submitting borrow request:", error);
+    return null;
   }
 };
 
