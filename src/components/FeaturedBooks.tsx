@@ -12,8 +12,8 @@ export default function FeaturedBooks() {
   return (
     <section className="py-16 bg-gray-100">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-8">
-          Featured <span className="text-blue-600">Books</span>
+        <h2 className="text-4xl text-sky-300 font-bold text-center mb-8">
+        🌟 Tài liệu mới
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {featuredBooks.map((book) => (
@@ -29,7 +29,7 @@ export default function FeaturedBooks() {
                 <h3 className="font-bold text-lg mb-2">{book.title}</h3>
                 <p className="text-gray-600 mb-4">{book.author}</p>
                 <Link href={`/book/${book.id}`} className="text-blue-600 hover:text-blue-800 font-semibold">
-                  View Details
+                  Xem chi tiết
                 </Link>
               </div>
             </div>

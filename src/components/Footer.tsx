@@ -1,97 +1,65 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
     <footer className="bg-gray-800 text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Thư viện thông tin */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">library</h3>
-            <p className="text-gray-400">Your gateway to knowledge and imagination.</p>
+            <h3 className="text-2xl font-bold mb-4">THƯ VIỆN</h3>
+            <p className="text-gray-400">TRƯỜNG THPT PHAN CHÂU TRINH</p>
+            <p className="text-gray-400 mt-2">Cung cấp sách, tài liệu học tập và nghiên cứu cho học sinh, sinh viên.</p>
           </div>
+
+          {/* Các liên kết */}
           <div>
-            <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
+            <h3 className="text-2xl font-bold mb-4">Liên Kết</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/catalog" className="hover:text-blue-400">
-                  Book Catalog
+                <Link href="/about">
+                  <span className="text-gray-400 hover:text-white">Giới thiệu</span>
                 </Link>
               </li>
               <li>
-                <Link href="/events" className="hover:text-blue-400">
-                  Events
+                <Link href="/search">
+                  <span className="text-gray-400 hover:text-white">Tìm kiếm sách</span>
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-blue-400">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/donate" className="hover:text-blue-400">
-                  Donate
+                <Link href="/contact">
+                  <span className="text-gray-400 hover:text-white">Liên hệ</span>
                 </Link>
               </li>
             </ul>
           </div>
+
+          {/* Liên hệ */}
           <div>
-            <h4 className="text-xl font-semibold mb-4">Support</h4>
+            <h3 className="text-2xl font-bold mb-4">Liên Hệ</h3>
+            <p className="text-gray-400">Email: <Link href="mailto:thuvien@gmail.com"><span className="text-blue-400">thuvienpct2021@gmail.com</span></Link></p>
+            <p className="text-gray-400 mt-2">Điện thoại: <span className="text-blue-400">0511. 3810381 - 3818579</span></p>
+          </div>
+
+          {/* Mạng xã hội */}
+          <div>
+            <h3 className="text-2xl font-bold mb-4">Mạng Xã Hội</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/faq" className="hover:text-blue-400">
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-blue-400">
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy" className="hover:text-blue-400">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms" className="hover:text-blue-400">
-                  Terms of Service
+                <Link href="https://pct.edu.vn/" passHref>
+                  <span className="text-gray-400 hover:text-white">Website</span>
                 </Link>
               </li>
             </ul>
-          </div>
-          <div>
-            <h4 className="text-xl font-semibold mb-4">Connect With Us</h4>
-            <div className="flex space-x-4 mb-4">
-              <a href="#" className="hover:opacity-75">
-                <Image src="/icon/facebook.png" alt="Facebook" width={32} height={32} />
-              </a>
-              <a href="#" className="hover:opacity-75">
-                <Image src="/icon/Twitter.png" alt="Twitter" width={32} height={32} />
-              </a>
-              <a href="#" className="hover:opacity-75">
-                <Image src="/icon/instagram.png" alt="Instagram" width={32} height={32} />
-              </a>
-            </div>
-            <form className="flex">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-grow px-3 py-2 rounded-l-md text-gray-800"
-              />
-              <button
-                type="submit"
-                className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-r-md"
-              >
-                Subscribe
-              </button>
-            </form>
           </div>
         </div>
+
+        {/* Footer Bottom */}
         <div className="mt-8 text-center border-t border-gray-700 pt-8">
+          <p className="text-gray-400">&copy; {new Date().getFullYear()} Thư viện Trường THPT Phan Châu Trinh. All rights reserved.</p>
         </div>
       </div>
     </footer>
-  )
+  );
 }
-
