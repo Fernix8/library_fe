@@ -5,8 +5,8 @@ import Footer from '@/components/Footer'
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Memorial Books",
-  description: "The Best Libraries That Every Book Lover Must Visit!",
+  title: "Thư viện trường THPT Phan Châu Trinh ",
+  description: "ĐỌC MỘT CUỐN SÁCH, ĐI MUÔN DẶM ĐƯỜNG",
 }
 
 export default function RootLayout({

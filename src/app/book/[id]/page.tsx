@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
-import Image from "next/image";
 import { fetchBookById, borrowBookRequest } from "@/utils/api";
 
 interface Book {
@@ -112,14 +111,6 @@ const BookDetail = () => {
         <section className="py-40 bg-gray-100">
             <div className="container mx-auto px-4 max-w-3xl bg-white p-6 rounded-lg shadow-lg">
                 <button onClick={() => router.push("/book")} className="text-blue-600 mb-4">← Quay lại sách</button>
-
-                <Image
-                    src={book.imageUrl || "/images/default_book.jpg"}
-                    alt={book.title}
-                    width={300}
-                    height={400}
-                    className="rounded-lg mb-4 mx-auto" // Centering the image
-                />
 
                 <h2 className="text-3xl font-bold text-orange-400 text-center mb-5">{book.title}</h2>
 
