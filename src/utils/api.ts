@@ -71,3 +71,15 @@ export const borrowBookRequest = async (borrowData: {
       return null;
   }
 };
+
+export const fetchTop5Books = async () => {
+  try {
+    const response = await fetch(`${API_URL}/books/top5`);
+    if (!response.ok) throw new Error("Failed to fetch top 5 books");
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error fetching top 5 books:", error);
+    return [];
+  }
+};

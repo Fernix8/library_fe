@@ -1,41 +1,67 @@
-import Image from "next/image"
-import Link from "next/link"
+'use client'
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { fetchTop5Books } from "../utils/api"; // Adjust the import as needed
 
-const featuredBooks = [
-  { id: 1, title: "The Great Gatsby", author: "F. Scott Fitzgerald", cover: "/images/book-1.jpg" },
-  { id: 2, title: "To Kill a Mockingbird", author: "Harper Lee", cover: "/images/book-2.jpg" },
-  { id: 3, title: "1984", author: "George Orwell", cover: "/images/book-3.jpg" },
-  { id: 4, title: "Pride and Prejudice", author: "Jane Austen", cover: "/images/book-4.jpg" },
-]
+interface Book {
+  _id: string;
+  bookCode: string; // Mã sách
+  title: string;    // Tên sách
+  author: string;   // Tác giả
+  publisher?: string; // Nhà xuất bản
+  publishedYear?: string; // Năm xuất bản
+  imageUrl?: string; // Ảnh sách
+}
 
 export default function FeaturedBooks() {
+  const [featuredBooks, setFeaturedBooks] = useState<Book[]>([]);
+
+  useEffect(() => {
+    const getTopBooks = async () => {
+      const books = await fetchTop5Books();
+      setFeaturedBooks(books);
+    };
+
+    getTopBooks();
+  }, []);
+
   return (
     <section className="py-16 bg-gray-100">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl text-sky-300 font-bold text-center mb-8">
-        🌟 Tài liệu mới
+          🌟 Tài liệu mới
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-          {featuredBooks.map((book) => (
-            <div key={book.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-              <Image
-                src={book.cover || "/placeholder.svg"}
-                alt={book.title}
-                width={300}
-                height={400}
-                className="w-full h-64 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="font-bold text-lg mb-2">{book.title}</h3>
-                <p className="text-gray-600 mb-4">{book.author}</p>
-                <Link href={`/book/${book.id}`} className="text-blue-600 hover:text-blue-800 font-semibold">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
+          {featuredBooks.length > 0 ? (
+            featuredBooks.map((book) => (
+              <div key={book._id} className="bg-white p-4 rounded-lg shadow-lg">
+                <Image
+                  src={book.imageUrl || "/images/default_book.jpg"}
+                  alt={book.title}
+                  width={300}
+                  height={400}
+                  className="rounded-lg mb-4"
+                />
+                <h3 className="text-xl font-semibold text-orange-400">📖 Tên sách: {book.title}</h3>
+                <p className="text-gray-700">📚 Mã sách: {book.bookCode}</p>
+                <p className="text-gray-700">✍ Tác giả: {book.author}</p>
+                {book.publisher && <p className="text-gray-500 text-sm">🏢 Nhà xuất bản: {book.publisher}</p>}
+                {book.publishedYear && <p className="text-gray-500 text-sm">📅 Năm xuất bản: {book.publishedYear}</p>}
+
+                {/* 🔍 View Details Button */}
+                <button
+                  onClick={() => window.location.href = `/book/${book._id}`}
+                  className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                >
                   Xem chi tiết
-                </Link>
+                </button>
               </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <p>Loading...</p>
+          )}
         </div>
       </div>
     </section>
-  )
+  );
 }
