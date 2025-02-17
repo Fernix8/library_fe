@@ -75,7 +75,7 @@ export default function About() {
             <li>Giải nhì Toán quốc tế (1986) – Nguyễn Hùng Sơn</li>
           </ul>
           <p className="text-lg text-gray-700">
-            Với phương châm "Chất lượng giáo dục là yếu tố quan trọng nhất", trường luôn phát triển không ngừng về mọi mặt, đặc biệt là công tác giảng dạy và đào tạo nhân tài cho đất nước.
+            Với phương châm CHẤT LƯỢNG GIÁO DỤC LÀ YẾU TỐ QUAN TRỌNG NHẤT, trường luôn phát triển không ngừng về mọi mặt, đặc biệt là công tác giảng dạy và đào tạo nhân tài cho đất nước.
           </p>
         </div>
 
@@ -98,7 +98,7 @@ export default function About() {
               - Huân chương Độc lập hạng Ba (2013)
             </li>
             <li className="mb-4">
-              - Bằng khen của Bộ trưởng Bộ GD&ĐT về thành tích xuất sắc trong phong trào thi đua "Dạy tốt - Học tốt"
+              - Bằng khen của Bộ trưởng Bộ GD&ĐT về thành tích xuất sắc trong phong trào thi đua Dạy tốt Học tốt.
             </li>
             <li className="mb-4">
               - Bằng khen của Chủ tịch UBND thành phố Đà Nẵng về hoàn thành xuất sắc nhiệm vụ nhiều năm liền.
