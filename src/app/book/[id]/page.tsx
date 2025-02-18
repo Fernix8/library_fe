@@ -144,9 +144,6 @@ const BookDetail = () => {
                     </div>
                 </div>
 
-
-
-
                 {/* Borrow Button */}
                 <button
                     onClick={() => setIsBorrowModalOpen(true)}
@@ -158,66 +155,70 @@ const BookDetail = () => {
 
             {/* Borrow Book Modal */}
             {isBorrowModalOpen && (
-                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-                    <div className="bg-white p-6 rounded-lg shadow-lg max-w-4xl w-full">
+                <div className="fixed inset-0 flex items-start justify-center bg-black bg-opacity-50 z-50">
+                    <div className="bg-white p-6 rounded-lg shadow-lg w-full sm:max-w-md md:max-w-4xl max-h-[90vh] overflow-hidden mt-14 sm:mt-16 z-50">
                         <h3 className="text-xl font-bold mb-4 text-center text-black">Mượn sách</h3>
 
-                        <div className="grid grid-cols-3 gap-4 text-black">
-                            <div>
-                                <label className="block mb-2 text-blue-600">👤 Họ và tên:</label>
-                                <input type="text" name="fullName" value={borrowData.fullName} onChange={handleInputChange} className="w-full p-2 border border-gray-300 rounded mb-3" />
-                            </div>
-                            <div>
-                                <label className="block mb-2 text-blue-600">✉️ Email:</label>
-                                <input type="email" name="email" value={borrowData.email} onChange={handleInputChange} className="w-full p-2 border border-gray-300 rounded mb-3" required />
-                            </div>
-                            <div>
-                                <label className="block mb-2 text-blue-600">📞 Số điện thoại:</label>
-                                <input type="tel" name="phone" value={borrowData.phone} onChange={handleInputChange} className="w-full p-2 border border-gray-300 rounded mb-3" />
-                            </div>
-                            <div>
-                                <label className="block mb-2 text-blue-600">📌 Số thẻ / Mã giáo viên:</label>
-                                <input type="text" name="cardNumber" value={borrowData.cardNumber} onChange={handleInputChange} className="w-full p-2 border border-gray-300 rounded mb-3" />
-                            </div>
-                            <div>
-                                <label className="block mb-2 text-blue-600">🏫 Lớp/Tổ chuyên môn:                                :</label>
-                                <input type="text" name="classOrDepartment" value={borrowData.classOrDepartment} onChange={handleInputChange} className="w-full p-2 border border-gray-300 rounded mb-3" />
-                            </div>
-                            <div>
-                                <label className="block mb-2 text-blue-600">📖 Mã sách:</label>
-                                <input
-                                    type="text"
-                                    value={book.bookId}
-                                    readOnly
-                                    className="w-full p-2 border border-gray-300 rounded mb-3 bg-gray-100"
-                                />
-                            </div>
-                            <div>
-                                <label className="block mb-2 text-blue-600">📚 Tên sách:</label>
-                                <input
-                                    type="text"
-                                    value={book.title}
-                                    readOnly
-                                    className="w-full p-2 border border-gray-300 rounded mb-3 bg-gray-100"
-                                />
-                            </div>
-                            <div>
-                                <label className="block mb-2 text-blue-600">📅 Ngày mượn:</label>
-                                <input
-                                    type="date"
-                                    name="borrowDate"
-                                    value={borrowData.borrowDate}
-                                    onChange={handleInputChange}
-                                    className="w-full p-2 border border-gray-300 rounded mb-3"
-                                />
-                            </div>
-                            <div>
-                                <label className="block mb-2 text-blue-600">📝 Ghi chú:</label>
-                                <input name="note" value={borrowData.note} onChange={handleInputChange} className="w-full p-2 border border-gray-300 rounded mb-3" />
+                        {/* Scrollable content area */}
+                        <div className="sm:max-h-[60vh] overflow-y-auto max-h-[70vh]">
+                            {/* Form Fields */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-black">
+                                <div>
+                                    <label className="block mb-2 text-blue-600">👤 Họ và tên:</label>
+                                    <input type="text" name="fullName" value={borrowData.fullName} onChange={handleInputChange} className="w-full p-2 border border-gray-300 rounded mb-3" />
+                                </div>
+                                <div>
+                                    <label className="block mb-2 text-blue-600">✉️ Email:</label>
+                                    <input type="email" name="email" value={borrowData.email} onChange={handleInputChange} className="w-full p-2 border border-gray-300 rounded mb-3" required />
+                                </div>
+                                <div>
+                                    <label className="block mb-2 text-blue-600">📞 Số điện thoại:</label>
+                                    <input type="tel" name="phone" value={borrowData.phone} onChange={handleInputChange} className="w-full p-2 border border-gray-300 rounded mb-3" />
+                                </div>
+                                <div>
+                                    <label className="block mb-2 text-blue-600">📌 Số thẻ / Mã giáo viên:</label>
+                                    <input type="text" name="cardNumber" value={borrowData.cardNumber} onChange={handleInputChange} className="w-full p-2 border border-gray-300 rounded mb-3" />
+                                </div>
+                                <div>
+                                    <label className="block mb-2 text-blue-600">🏫 Lớp/Tổ chuyên môn:</label>
+                                    <input type="text" name="classOrDepartment" value={borrowData.classOrDepartment} onChange={handleInputChange} className="w-full p-2 border border-gray-300 rounded mb-3" />
+                                </div>
+                                <div>
+                                    <label className="block mb-2 text-blue-600">📖 Mã sách:</label>
+                                    <input
+                                        type="text"
+                                        value={book.bookId}
+                                        readOnly
+                                        className="w-full p-2 border border-gray-300 rounded mb-3 bg-gray-100"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block mb-2 text-blue-600">📚 Tên sách:</label>
+                                    <input
+                                        type="text"
+                                        value={book.title}
+                                        readOnly
+                                        className="w-full p-2 border border-gray-300 rounded mb-3 bg-gray-100"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block mb-2 text-blue-600">📅 Ngày mượn:</label>
+                                    <input
+                                        type="date"
+                                        name="borrowDate"
+                                        value={borrowData.borrowDate}
+                                        onChange={handleInputChange}
+                                        className="w-full p-2 border border-gray-300 rounded mb-3"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block mb-2 text-blue-600">📝 Ghi chú:</label>
+                                    <input name="note" value={borrowData.note} onChange={handleInputChange} className="w-full p-2 border border-gray-300 rounded mb-3" />
+                                </div>
                             </div>
                         </div>
 
-                        <div className="flex justify-end space-x-2 mt-4">
+                        <div className="flex justify-between space-x-2 mt-4">
                             <button onClick={() => setIsBorrowModalOpen(false)} className="px-4 py-2 bg-gray-400 text-white rounded">Hủy</button>
                             <button onClick={handleBorrowSubmit} className="px-4 py-2 bg-green-600 text-white rounded">Xác nhận mượn</button>
                         </div>
