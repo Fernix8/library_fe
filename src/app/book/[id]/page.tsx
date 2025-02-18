@@ -126,7 +126,7 @@ const BookDetail = () => {
                         <p>📄 <strong>Số trang:</strong> {book.paper || "Chưa có thông tin"}</p>
                         <p>🗒️ <strong>Chú thích:</strong> {book.footnote || "Chưa có thông tin"}</p>
                         <p>📝 <strong>Ghi chú:</strong> {book.note || "Chưa có thông tin"}</p>
-                        <p>🌍 <strong>Nơi sản xuất:</strong> {book.manufacturingPlace || "Chưa có thông tin"}</p>
+                        <p>🌍 <strong>Nơi xuất bản:</strong> {book.manufacturingPlace || "Chưa có thông tin"}</p>
                         <p>🔤 <strong>Tùng thư:</strong> {book.letter || "Chưa có thông tin"}</p>
                     </div>
 

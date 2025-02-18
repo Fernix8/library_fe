@@ -6,7 +6,7 @@ import Benefits from '@/components/Benefits'
 
 export default function Home() {
   return (
-    <main className="min-h-screen pt-28">
+    <main className="min-h-screen pt-20">
       <Slider />
       <FeaturedBooks />
       <Benefits />

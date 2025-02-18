@@ -11,7 +11,7 @@ export default function Header() {
 
   return (
     <header
-      className="bg-white shadow-md fixed top-0 left-0 right-0 z-10 flex flex-col md:flex-row items-center h-20 md:h-32 px-4 transition-all"
+      className="bg-white shadow-md fixed top-0 left-0 right-0 z-10 flex flex-col md:flex-row items-center h-20 md:h-28 px-4 transition-all"
       style={{
         backgroundImage: "linear-gradient(to left, rgb(0, 123, 255), rgb(255, 255, 255))",
         backgroundSize: "100% 100%",
@@ -21,25 +21,29 @@ export default function Header() {
     >
       <div className="container mx-auto flex justify-between items-center w-full">
         {/* Logo */}
-        <Link href="/">
-          <Image
-            src="/images/Logo.jpg"
-            alt="School Logo"
-            width={60} // Smaller logo on mobile
-            height={60}
-            className="md:w-20 md:h-20 rounded-full border border-white shadow-lg transition-all"
-          />
-        </Link>
+        <div className="flex items-center space-x-4">  {/* Added flex-row and space-x for horizontal layout */}
+          {/* Logo */}
+          <Link href="/">
+            <Image
+              src="/images/Logo.jpg"
+              alt="School Logo"
+              width={60} // Adjust for mobile
+              height={60}
+              className="md:w-20 md:h-20 rounded-full border border-white shadow-lg transition-all"
+            />
+          </Link>
 
-        {/* Title & Slogan (Hidden on small screens) */}
-        <div className="hidden md:flex flex-1 text-center">
-          <h1 className="text-lg md:text-2xl font-bold text-white drop-shadow-lg">
-            THƯ VIỆN TRƯỜNG THPT PHAN CHÂU TRINH
-          </h1>
-          <p className="text-sm md:text-lg text-white italic drop-shadow-md">
-            “ĐỌC MỘT CUỐN SÁCH, ĐI MUÔN DẶM ĐƯỜNG.”
-          </p>
+          {/* Title & Slogan (Hidden on Mobile) */}
+          <div className="hidden md:flex flex-col items-start text-left">
+            <h1 className="text-xl font-bold text-white drop-shadow-lg whitespace-nowrap">
+              THƯ VIỆN TRƯỜNG THPT PHAN CHÂU TRINH
+            </h1>
+            <p className="text-lg text-white italic drop-shadow-md">
+              “ĐỌC MỘT CUỐN SÁCH, ĐI MUÔN DẶM ĐƯỜNG.”
+            </p>
+          </div>
         </div>
+
 
         {/* Mobile Menu Button */}
         <button
@@ -71,11 +75,10 @@ export default function Header() {
               <li key={item.path}>
                 <Link href={item.path} className="no-underline">
                   <span
-                    className={`px-4 py-2 rounded-md font-semibold cursor-pointer transition ${
-                      pathname === item.path
-                        ? "bg-blue-600 text-white"
-                        : "text-black hover:text-white"
-                    }`}
+                    className={`px-4 py-2 rounded-md font-semibold cursor-pointer transition ${pathname === item.path
+                      ? "bg-blue-600 text-white"
+                      : "text-black hover:text-white"
+                      }`}
                   >
                     {item.name}
                   </span>
@@ -99,11 +102,10 @@ export default function Header() {
               <li key={item.path}>
                 <Link href={item.path} className="no-underline">
                   <span
-                    className={`block px-6 py-3 text-lg rounded-md font-semibold cursor-pointer transition ${
-                      pathname === item.path
-                        ? "bg-blue-600 text-white"
-                        : "text-black hover:text-blue-600"
-                    }`}
+                    className={`block px-6 py-3 text-lg rounded-md font-semibold cursor-pointer transition ${pathname === item.path
+                      ? "bg-blue-600 text-white"
+                      : "text-black hover:text-blue-600"
+                      }`}
                     onClick={() => setMenuOpen(false)} // Close menu on click
                   >
                     {item.name}
